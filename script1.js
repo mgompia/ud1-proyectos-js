@@ -140,3 +140,48 @@ function suma_diez_v2(num_vueltas) {
 //Ejemplo 10: Calculadora. Pide dos numeros y muestra un menu para que los
 //sume, reste, multiplique o divida segun la opción marcada. Valida los datos.
 
+function calculadora() {
+    let num1 = parseInt(window.prompt("Introduce el primer operando: "));
+    let num2 = parseInt(window.prompt("Introduce el segundo operando: "));
+
+    let salir = false;
+    let resultado; 
+
+    do {
+        let opc = window.prompt("Elija una operacion: \n" +
+            "a. Suma \n" +
+            "b. Resta \n" +
+            "c. Multiplicación \n" +
+            "d. División \n" +
+            "e. Potencia \n" +
+            "f. Salir");
+
+        switch (opc) {
+            case 'a':
+                resultado = num1+num2; 
+                break;
+            case 'b':
+                resultado = num1-num2; 
+                break;
+            case 'c':
+                resultado = num1*num2; 
+                break;
+            case 'd':
+                //Validar division por 0
+                resultado = num1/num2; 
+                break;
+            case 'e':
+                resultado = potencia(num1,num2);
+                break;
+            case 'f':
+                salir = true; 
+                break;
+            
+        }
+
+        console.log(resultado);
+
+    } while (!salir);s
+}
+
+console.log(calculadora());
