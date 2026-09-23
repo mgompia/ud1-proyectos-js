@@ -214,7 +214,7 @@ function ejemplo11() {
     //variable = condicion ? caso_true : caso_false;
     precio = edad > 18 ? precio * 0.80 : precio * 0.75;
 
-    console.log("El precio tras el descuentp es " + precio); 
+    console.log("El precio tras el descuentp es " + precio);
 }
 
 
@@ -228,14 +228,14 @@ function ejemplo12() {
     let precio = parseInt(window.prompt("Introduce el precio del producto: "));
     let envio = 0;
 
-    envio = (precio > 50)? envio: envio+5;
+    envio = (precio > 50) ? envio : envio + 5;
 
     let precioTotal = precio + envio;
 
     console.log("El envio del producto costará " + envio + ". La suma de el precio del producto y el envio es de " + precioTotal);
 }
 
-ejemplo12();
+//ejemplo12();
 
 //==============================================================================================
 //==============================================================================================
@@ -243,6 +243,33 @@ ejemplo12();
 //al usuario números hasta que lo acierte. Al finalizar, si el numero de intentos es
 //superior a la 10 pintará por pantalla has perdido y has ganado si es inferior.
 
-function ejemplo13(){
+function ejemplo13() {
+    let numAleatorio = Math.floor(Math.random() * 100 + 1);
+    let numUsuario = 0;
+    let numIntentos = 0;
+
+    console.log(numAleatorio);
     
+    do {
+        numUsuario = window.prompt("Escribe un número para acertar.")
+
+        if (numUsuario == numAleatorio) {
+            console.log("Has ganado");
+            break;
+        } else {
+            numIntentos++;
+            console.log("Has fallado un intento de 10 llevas " + numIntentos);
+        }
+
+        if (numIntentos > 9) {
+            console.log("Has perdido");
+            break;
+        }
+
+
+    } while (numIntentos < 10 || numUsuario == numAleatorio);
+
+
 }
+
+ejemplo13(); 
