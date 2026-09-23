@@ -48,7 +48,7 @@ function ejemplo4() {
 //var: ambito de funcion
 
 function calcula_edad() {
-    const edad2 = window.prompt("Introduce tu edad: ");
+    //const edad2 = window.prompt("Introduce tu edad: ");
     if (edad2 >= 18) {
         let mensaje = "Eres mayor de edad";
         console.log(mensaje);
@@ -145,7 +145,7 @@ function calculadora() {
     let num2 = parseInt(window.prompt("Introduce el segundo operando: "));
 
     let salir = false;
-    let resultado; 
+    let resultado;
 
     do {
         let opc = window.prompt("Elija una operacion: \n" +
@@ -158,30 +158,91 @@ function calculadora() {
 
         switch (opc) {
             case 'a':
-                resultado = num1+num2; 
+                resultado = num1 + num2;
+                console.log(resultado);
                 break;
             case 'b':
-                resultado = num1-num2; 
+                resultado = num1 - num2;
+                console.log(resultado);
                 break;
             case 'c':
-                resultado = num1*num2; 
+                resultado = num1 * num2;
+                console.log(resultado);
                 break;
             case 'd':
                 //Validar division por 0
-                resultado = num1/num2; 
+                if (num2 == 0) {
+                    console.error("No se puede dividir por 0");
+                } else {
+                    resultado = num1 / num2;
+                }
+                console.log(resultado);
                 break;
             case 'e':
-                resultado = potencia(num1,num2);
+                resultado = potencia(num1, num2);
+                console.log(resultado);
                 break;
             case 'f':
-                salir = true; 
+                salir = true;
                 break;
-            
+            default:
+                console.error("Introduce un valor correcto");
+                break;
+
         }
 
-        console.log(resultado);
-
-    } while (!salir);s
+    } while (!salir);
 }
 
-console.log(calculadora());
+//console.log(calculadora());
+
+//==============================================================================================
+//==============================================================================================
+//Ejemplo ternario
+function ejemplo11() {
+    let precio = 150;
+    console.log("Precio original: " + precio);
+
+    let edad = window.prompt("Introduce tu edad");
+
+    //if(edad > 18){
+    //    precio = precio*0.80;
+    //}else{
+    //    precio = precio*0.75;
+    //}
+
+    //variable = condicion ? caso_true : caso_false;
+    precio = edad > 18 ? precio * 0.80 : precio * 0.75;
+
+    console.log("El precio tras el descuentp es " + precio); 
+}
+
+
+//==============================================================================================
+//==============================================================================================
+//Ejemplo 12: Pide el precio del producto por pantalla. Si es superior a 50 euros
+//el envio sale gratis, Si no 5€, el sistema debe mostrar al principio el precio
+//original y al final el precio total. 
+
+function ejemplo12() {
+    let precio = parseInt(window.prompt("Introduce el precio del producto: "));
+    let envio = 0;
+
+    envio = (precio > 50)? envio: envio+5;
+
+    let precioTotal = precio + envio;
+
+    console.log("El envio del producto costará " + envio + ". La suma de el precio del producto y el envio es de " + precioTotal);
+}
+
+ejemplo12();
+
+//==============================================================================================
+//==============================================================================================
+//Ejemplo 13: Crea un programa que calcule un número aleatorio y pida
+//al usuario números hasta que lo acierte. Al finalizar, si el numero de intentos es
+//superior a la 10 pintará por pantalla has perdido y has ganado si es inferior.
+
+function ejemplo13(){
+    
+}
