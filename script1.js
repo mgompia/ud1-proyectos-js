@@ -292,12 +292,12 @@ function ejemplo14() {
     let media;
 
     do {
-        numeros = parseInt(window.prompt("Introduce un número cuando sea 0 se acaba")); 
+        numeros = parseInt(window.prompt("Introduce un número cuando sea 0 se acaba"));
 
         if (numeros != 0) {
             if (numeros > numMayor) {
                 numMayor = numeros;
-            } 
+            }
             if (numeros < numMenor) {
                 numMenor = numeros;
             }
@@ -328,42 +328,88 @@ function ejemplo14() {
 //==============================================================================================
 //Ejemplo 15: Pide una nota numérica y muestra por pantalla si es Suspenso (0-5),
 //, suficiente (5-6), bien (7-8), sobresaliente (9-10).
-function ejemplo15(){
-    let nota = window.prompt("Pon la nota que has sacado entre [0-10]");
+function ejemplo15() {
+    let nota = parseInt(window.prompt("Pon la nota que has sacado entre [0-10]"));
     let tipo;
 
-    if(nota >= 0 && nota<= 10){
-        if(nota >= 0 && nota <= 4){
-            tipo = "Suspenso"; 
-        }else if(nota >= 5 && nota <= 6){
-            tipo = "Suficiente"; 
-        }else if(nota >= 7 && nota <= 8){
-            tipo = "Bien"; 
-        }else if(nota >= 9 && nota <= 10){
-            tipo = "Sobresaliente"; 
+    if (nota >= 0 && nota <= 10) {
+        if (nota >= 0 && nota <= 4) {
+            tipo = "Suspenso";
+        } else if (nota >= 5 && nota <= 6) {
+            tipo = "Suficiente";
+        } else if (nota >= 7 && nota <= 8) {
+            tipo = "Bien";
+        } else if (nota >= 9 && nota <= 10) {
+            tipo = "Sobresaliente";
         }
 
         console.log("Tu nota es un " + nota + " eso significa que tu nota es " + tipo);
-    }else{
+    } else {
         console.log("Pon una nota que este entre el [0-10]")
     }
 }
 
-ejemplo15(); 
+//ejemplo15();
 
 //==============================================================================================
 //==============================================================================================
 //Ejemplo 16: Pide un número por pantalla y muestra el número de digitos que tiene
+function ejemplo16() {
+    let numOriginal = parseInt(window.prompt("Escribe un número"));
+    let contadorDigitos = 0;
+    let numero = Math.abs(numOriginal);
+
+    if (numero === 0) {
+        contadorDigitos = 1;
+    } else {
+        while (numero >= 1) {
+            numero = Math.floor(numero / 10);
+            contadorDigitos++;
+        }
+    }
+
+    console.log("El numero original es " + numOriginal + " y tiene una suma de " + contadorDigitos + " de dígitos");
+}
+
+//ejemplo16();
+
 
 //==============================================================================================
 //==============================================================================================
 //Ejemplo 17: Calcula el factorial de un número solicitado por pantalla
 //siempre y cuando este numero sea positivo y par.
+function ejemplo17() {
+    let numero = window.prompt("Introduce un numero para calcular el factorial");
+    
+    if (numero >= 3) {
+
+        let resultado = 1;
+        for (let i = 2; i <= numero; i++) {
+            resultado *= i;
+        }
+        console.log("EL factorial de " + numero + " es " + resultado); 
+    } else {
+        console.log("Tienes que introducir un número mayor o igual a tres para calcular el factorial");    
+    }
+}
+
+//ejemplo17(); 
 
 //==============================================================================================
 //==============================================================================================
 //Ejemplo 18: Pide un número por pantalla e imprimelo invertido.
+function ejemplo18(){
+    let numero = parseInt(window.prompt("Introduce un numero"));
+    let numeroInvertido = 0;
+    let posicion = 1; 
 
+    do {
+        numeroInvertido += (numero % 10) * posicion; 
+        numero = numero/10; 
+    } while (numero > 1);
+
+    console.log("El numero invertido es: " + numeroInvertido); 
+}
 //==============================================================================================
 //==============================================================================================
 //Ejemplo 19: Muestra todos los divisores de un numero solicitado por pantalla
