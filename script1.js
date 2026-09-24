@@ -403,16 +403,25 @@ function ejemplo18(){
     let numeroInvertido = 0;
     let posicion = 1; 
 
-    do {
-        numeroInvertido += (numero % 10) * posicion; 
-        numero = numero/10; 
-    } while (numero > 1);
+   while(numero > 0){
+        numeroInvertido = numeroInvertido * 10 + (numero % 10); 
+        
+        numero = Math.floor(numero/10); 
+    } 
 
     console.log("El numero invertido es: " + numeroInvertido); 
 }
+
+ejemplo18(); 
+
+
 //==============================================================================================
 //==============================================================================================
 //Ejemplo 19: Muestra todos los divisores de un numero solicitado por pantalla
+function ejemplo19(){
+    
+}
+
 
 //==============================================================================================
 //==============================================================================================
