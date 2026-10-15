@@ -105,7 +105,7 @@ function ejemplo11(){
 
 }
 
-ejemplo11();
+//ejemplo11();
 
 // Ejemplo 1: Datos personales. Declara variables para almacenar tu
 // nombre, edad y ciudad. Muestra por consola una frase con esos datos.
@@ -723,12 +723,12 @@ function ejemplo32() {
 // es mayor o menor que el número secreto. El juego deberá contar el número 
 // de intentos y finalizar cuando el jugador acierte. Organiza el programa 
 // utilizando funciones.
-function evaluar(intento, secreto){
+function comparar(intento, secreto){
     if(intento === secreto) return 0;
     return intento > secreto ? 1 : -1;
 }
 
-function numAleatorio(){
+function ej33(){
     const secreto = Math.floor(Math.random() * 100) + 1; 
     let intentos = 0; 
     let intento = 0; 
@@ -738,12 +738,12 @@ function numAleatorio(){
         intento = parseInt(window.prompt("Intenta acertar el número")); 
         intentos++;
 
-        let evaluacion = evaluar(intento, secreto); 
+        let evaluacion = comparar(intento, secreto); 
 
         if(evaluacion === 0){
             console.log("Acertaste en " + intentos + " intentos"); 
             acierto = true; 
-        }else if(evaluación === 1){
+        }else if(evaluacion === 1){
             console.log("Menor...");
         }else{
             console.log("Mayor...");
@@ -751,6 +751,7 @@ function numAleatorio(){
     }
 }
 
+ej33(); 
 
 // Ejemplo 34: Conversor de unidades. Crea un programa que permita 
 // convertir diferentes unidades. El usuario podrá elegir entre convertir 
