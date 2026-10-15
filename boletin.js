@@ -648,6 +648,46 @@ function ejemplo31() {
     const media = calcularMedia(suma, totalNotas);
     console.log(`Media: ${media.toFixed(2)} - Calificación: ${calificacionFinal(media)}`);
 }
+
+//Ejemplo profesor
+function ejercicio31(){
+    let num_notas = parseInt(window.prompt("Introduce el numero de notas"));
+    let acum_notas = 0;
+
+    for(let i = 1 ; i <= num_notas; i++){
+        let nota = window.prompt(`Introduce la nota ${i}`); 
+        acum_notad += nota; 
+    }
+
+    const nota_final = acum_notas/num_notas;
+    console.log(`Tu nota final es $`)
+}
+
+function calificacion_final(nota){
+    let result; 
+    switch(true){
+        case nota >= 0 && nota < 5:
+            result = "SUSPENSO";
+            break; 
+        case nota >= 5 && nota < 6:
+            result = "APROBADO";
+            break; 
+        case nota >= 6 && nota < 7:
+            result = "BIEN";
+            break; 
+        case nota >= 6 && nota < 7:
+            result = "BIEN";
+            break; 
+        case nota >= 7 && nota < 9:
+            result = "NOTABLE";
+            break; 
+        case nota >= 9 && nota < 11:
+            result = "SOBRESALIENTE";
+            break; 
+        
+    }
+}
+
 //ejemplo31();
 
 // Ejemplo 32: Cajero automático. Simula el funcionamiento de un cajero 
