@@ -10,7 +10,7 @@ function ejercicio1() {
         alert(mensaje);
     }, segundos * 1000);
 }
-ejercicio1();
+//ejercicio1();
 
 function ejercicio1ej2() {
     const segundos = parseInt(window.prompt("Introduce los segundos"));
@@ -63,7 +63,32 @@ function ejercicio3(){
 //Ejercicio 5
 //Al cargar la pagina consulta el nombre de usuario
 //almacenado en el localStorage. si existe saluda si no lo pide
+function ejercicio5(){
+    let nombre = window.localStorage.getItem("username");
+    if(!nombre){
+        nombre = window.prompt("Introduce tu nombre");
+    }
+    console.log("Hola " + nombre); 
+    window.localStorage.setItem("username", nombre); 
+
+    function vaciarStorage(){
+        window.localStorage.clear(); 
+    }
+}
+
 
 //Ejercicio 6
 //Contador de recargas. Cada vez que el usuario abra la página,
 //acceda o actualice debe incrementar el numero de visitas 
+function ejercicio6(){
+    let visitas = window.localStorage.getItem("visitas"); 
+    let contador = visitas != null? parseInt(visitas)++ : 0; 
+    contador++;
+    //Si visitas no exist en localstorage la crea con valor contador
+    //Si existe, modifica su valor a contador
+    window.localStorage.setItem("visitas", contador); 
+    document.getElementById("visitas").textContent = contador; 
+    console.log(contador); 
+}
+
+ejercicio6(); 
