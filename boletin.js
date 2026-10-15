@@ -751,7 +751,7 @@ function ej33(){
     }
 }
 
-ej33(); 
+//ej33(); 
 
 // Ejemplo 34: Conversor de unidades. Crea un programa que permita 
 // convertir diferentes unidades. El usuario podrá elegir entre convertir 
@@ -783,23 +783,24 @@ function ejemplo34() {
 // introducir correctamente ambos datos. Crea una función que compruebe 
 // las credenciales y otra que muestre el resultado del acceso. Si se 
 // superan los tres intentos, el acceso deberá quedar bloqueado.
-function checkCredenciales(u, p) { return u === "admin" && p === "1234"; }
-function mostrarResultado(exito) { console.log(exito ? "Acceso concedido" : "Credenciales incorrectas"); }
-function ejemplo35() {
-    let intentos = 0;
-    let bloqueado = false;
-    while (intentos < 3 && !bloqueado) {
-        let user = window.prompt("Usuario:");
-        let pass = window.prompt("Contraseña:");
-        let valido = checkCredenciales(user, pass);
-        mostrarResultado(valido);
-        if (valido) return;
-        intentos++;
-    }
-    console.log("Sistema bloqueado. Demasiados intentos.");
-}
-//ejemplo35();
 
+function comprobarContra(u, p){return u === "admin" && p === "1234"; }
+function mostrarRes(exito){console.log(exito ? "Acceso concedido" : "Credenciales incorrectas"); }
+function eje35(){
+    let intentos = 0; 
+    let bloqueado = false; 
+    while(intentos < 3 && !bloqueado){
+        let user = window.prompt("Usuario:");
+        let pass = window.prompt("Contraseña:"); 
+        let valido = comprobarContra(user, pass);
+        mostrarRes(valido); 
+        if(valido) return; 
+        intentos++; 
+    }
+    console.log("Sistema bloqueado, has realizado demasiados intentos"); 
+}
+
+eje35(); 
 // Ejemplo 36: Facturación de un producto. Crea un programa que calcule el 
 // importe final de una compra. El usuario deberá introducir el precio del 
 // producto y la cantidad adquirida. El programa aplicará diferentes descuentos 
