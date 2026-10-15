@@ -723,32 +723,34 @@ function ejemplo32() {
 // es mayor o menor que el número secreto. El juego deberá contar el número 
 // de intentos y finalizar cuando el jugador acierte. Organiza el programa 
 // utilizando funciones.
-function evaluarIntento(intento, secreto) {
-    if (intento === secreto) return 0;
+function evaluar(intento, secreto){
+    if(intento === secreto) return 0;
     return intento > secreto ? 1 : -1;
 }
 
-function ejemplo33() {
-    const secreto = Math.floor(Math.random() * 100) + 1;
-    let intentos = 0;
-    let acierto = false;
-    while (!acierto) {
-        let intento = parseInt(window.prompt("Adivina el número (1-100):"));
+function numAleatorio(){
+    const secreto = Math.floor(Math.random() * 100) + 1; 
+    let intentos = 0; 
+    let intento = 0; 
+    let acierto = false; 
+
+    while(!acierto){
+        intento = parseInt(window.prompt("Intenta acertar el número")); 
         intentos++;
-        
-        let evaluacion = evaluarIntento(intento, secreto); 
-        
-        if (evaluacion === 0) {
-            console.log(`¡Acertaste en ${intentos} intentos!`);
-            acierto = true;
-        } else if (evaluacion === 1) {
+
+        let evaluacion = evaluar(intento, secreto); 
+
+        if(evaluacion === 0){
+            console.log("Acertaste en " + intentos + " intentos"); 
+            acierto = true; 
+        }else if(evaluación === 1){
             console.log("Menor...");
-        } else {
+        }else{
             console.log("Mayor...");
         }
     }
 }
-//ejemplo33();
+
 
 // Ejemplo 34: Conversor de unidades. Crea un programa que permita 
 // convertir diferentes unidades. El usuario podrá elegir entre convertir 
